@@ -1,0 +1,31 @@
+﻿<h1>Employee Portal</h1>
+
+@{
+    var mess = ViewBag.Message;
+    var emps = ViewBag.EmpList;
+}
+
+<h2>@mess</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Salary</th>
+            <th scope="col">View Details</th>
+        </tr>
+    </thead>
+    <tbody>
+       @foreach(var item in emps)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <th scope="row">@item.Name</th>
+                <th scope="row">@item.Age</th>
+                <th scope="row">@item.Salary</th>
+                <th scope="row"> <a href="~/Employee/ViewDetails/@item.Id" class="btn btn-primary">View Details</a></th>
+            </tr>
+        }
+    </tbody>
+</table>

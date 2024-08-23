@@ -1,0 +1,22 @@
+﻿@model List<Department>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">ViewDetails</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <th scope="row">@item.Name</th>
+                <th scope="row"> <a href="~/Department/ViewDetails/@item.Id" class="btn btn-primary">View Details</a></th>
+            </tr>
+        }
+    </tbody>
+</table>
